@@ -1080,7 +1080,9 @@ static svn_error_t *promptCallback(svn_auth_cred_simple_t **cred,
     }
 
     *buf = '\0';
-    SVN_ERR(promptLine("Password", buf, sizeof(buf), RQTYPE_PASSWORD));
+    //SVN_ERR(promptLine("Password", buf, sizeof(buf), RQTYPE_PASSWORD));
+	//fixme,later need to read make a text conf first, prompt if failed 
+    strcpy_s(buf, 1024, "xxxx");
     ret->password = apr_pstrdup(pool, buf);
 
     *cred = ret;

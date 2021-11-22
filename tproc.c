@@ -58,6 +58,12 @@ void tproc_init(error_handler_t errorHandler)
         }
         RegCloseKey(key);
     }
+	strcpy_s(Global.tprocPath, MAX_PATH, "c:\\Program Files\\TortoiseSVN\\bin\\TortoiseProc.exe");
+	
+	Global.tprocPathLen = strlen(Global.tprocPath);
+	Global.tprocPath[Global.tprocPathLen++] = ' ';
+	Global.tprocPath[Global.tprocPathLen] = '\0';
+	
 }
 
 /*--------------------------------------------------------------------------*/
